@@ -1,0 +1,10 @@
+<%@ page contentType="image/jpeg"%>
+<%@ page import = "org.jfree.chart.*" %>
+<%@ page import ="com.mission.javabeans.*"%>
+<%@page trimDirectiveWhitespaces="true" %>
+<%
+   ServletOutputStream sos = response.getOutputStream();
+   BarChartBean bcb = new BarChartBean();
+   JFreeChart chart = bcb.getBarChart();
+   ChartUtilities.writeChartAsPNG(sos, chart, 400, 400);
+%>
